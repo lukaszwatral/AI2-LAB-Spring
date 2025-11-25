@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit person</title>
+</head>
+<body>
+<form th:action="@{/people/save}" th:object="${person}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    First name: <input type="text" th:field="*{firstName}" /><br/>
+    Family name: <input type="text" th:field="*{familyName}" /><br/>
+    <button type="submit">Save</button>
+    <a th:href="@{/people}">Cancel</a>
+</form>
+</body>
+</html>

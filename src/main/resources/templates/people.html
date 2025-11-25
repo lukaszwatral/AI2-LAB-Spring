@@ -1,0 +1,16 @@
+<!-- src/main/resources/templates/people.html -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>People</title>
+</head>
+<body>
+<h1>List of my friends</h1>
+<ul>
+    <li th:each="person : ${people}">
+        <a th:href="@{|/people/${person.id}|}" th:text="${person.firstName} + ' ' + ${person.familyName}"></a>
+    </li>
+</ul>
+<a th:href="@{/people/add}">Add new person</a>
+</body>
+</html>
